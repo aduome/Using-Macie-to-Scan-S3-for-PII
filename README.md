@@ -51,7 +51,7 @@ for x in $(ls -1 *.txt); do aws s3 cp ${x} s3://BUCKET_NAME/$RANDOM/$RANDOM/$RAN
 - Create a Macie job for the selected bucket.
 
 ## Task 3: Setting up SNS
-- Navigate to the Amazon SNS Console.
+- Navigate to the (Amazon SNS Console)https://us-east-1.console.aws.amazon.com/sns/v3/home?region=us-east-1#/homepage
 
 - Create an SNS topic named "Macie-Alerts".
 
