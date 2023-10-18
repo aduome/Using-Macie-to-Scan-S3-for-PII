@@ -44,14 +44,14 @@ for x in $(ls -1 *.txt); do aws s3 cp ${x} s3://BUCKET_NAME/$RANDOM/$RANDOM/$RAN
 ```
 
 ## Task 2: Enable Amazon Macie
-- Navigate to the Amazon Macie Console.
+- Navigate to the [Macie console](https://us-east-1.console.aws.amazon.com/macie/home?region=us-east-1#home)
 
 - Enable Macie and select the S3 bucket created earlier for scanning.
 
 - Create a Macie job for the selected bucket.
 
 ## Task 3: Setting up SNS
-- Navigate to the (Amazon SNS Console)https://us-east-1.console.aws.amazon.com/sns/v3/home?region=us-east-1#/homepage
+- Navigate to the [Amazon SNS Console](https://us-east-1.console.aws.amazon.com/sns/v3/home?region=us-east-1#/homepage)
 
 - Create an SNS topic named "Macie-Alerts".
 
@@ -60,12 +60,12 @@ for x in $(ls -1 *.txt); do aws s3 cp ${x} s3://BUCKET_NAME/$RANDOM/$RANDOM/$RAN
 - Create SNS Topic
 
 ## Task 4: Setting up EventBridge
-- Navigate to the Amazon EventBridge Console.
+- Navigate to the [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#)
 
 - Create an EventBridge rule to trigger on Macie findings and send events to the SNS topic.
 
 ## Task 5: Adding a Custom Macie Data Identifier
-- Navigate to the Macie console.
+- Navigate to the [Macie console](https://us-east-1.console.aws.amazon.com/macie/home?region=us-east-1#home)
 - Create a custom data identifier for Australian license plates using the provided regular expression.
 
 ## Task 6: Starting a New Job
