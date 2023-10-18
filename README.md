@@ -25,9 +25,13 @@ The following AWS services will be used:
 We will use the following example PII data for this demonstration:
 
 - Credit Card Information: `cc.txt`
+[Get CC files here](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Example%20Files/cc.txt)
 - Employee Information: `employees.txt`
+[Get Employee Information here](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Example%20Files/employees.txt)
 - Access Credentials: `keys.txt`
+[Get keys here](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Example%20Files/keys.txt)
 - Custom Data (Australian Licence Plates): `plates.txt`
+[Get plates here](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Example%20Files/plates.txt)
 
 ## Task 1 - Add Example Data to S3
 
@@ -56,6 +60,8 @@ for x in $(ls -1 *.txt); do aws s3 cp ${x} s3://BUCKET_NAME/$RANDOM/$RANDOM/$RAN
 - Create an SNS topic named "Macie-Alerts".
 
 - Subscribe your email to the topic for notifications.
+- 
+- Confirm your subscribed email.
 
 - Create SNS Topic
 
