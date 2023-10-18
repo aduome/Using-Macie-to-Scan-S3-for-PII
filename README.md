@@ -40,6 +40,8 @@ We will use the following example PII data for this demonstration:
 3. Create a new S3 bucket.
 4. Upload the example files to the S3 bucket.
 
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/1.%20S3%20Uploaded%20files_Example%20files.png)
+
 Optional: Use AWS CLI to upload files to random subdirectories.
 
 ```bash
@@ -52,15 +54,23 @@ for x in $(ls -1 *.txt); do aws s3 cp ${x} s3://BUCKET_NAME/$RANDOM/$RANDOM/$RAN
 
 - Enable Macie and select the S3 bucket created earlier for scanning.
 
+  ![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/2.%20Macie%20-%20Select%20Specific%20bucket.png)
+
 - Create a Macie job for the selected bucket.
+  
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/3.%20Macie%20-%20Select%20one-time%20job.png)
 
 ## Task 3: Setting up SNS
 - Navigate to the [Amazon SNS Console](https://us-east-1.console.aws.amazon.com/sns/v3/home?region=us-east-1#/homepage)
 
 - Create an SNS topic named "Macie-Alerts".
 
+[-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/4.%20SNS%20topic%20created.png)
+
 - Subscribe your email to the topic for notifications.
-- 
+
+  
+  
 - Confirm your subscribed email.
 
 - Create SNS Topic
