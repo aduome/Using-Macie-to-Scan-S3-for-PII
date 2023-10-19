@@ -97,8 +97,26 @@ This is a very basic regular expression that will pick up the license plate form
 
 ## Task 6: Starting a New Job
 - Start a Macie job to scan the S3 bucket for PII using the custom data identifier.
+- Go to `Show Results` and select `Findings` to show PII identified by Amazon Macie
+
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/13.%20Job%20was%20created%20successfully.png)
+
+- Examples of `Findings` of `Medium` Sensitive PII identified by Amazon Macie.
 
 ![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/10.%20Macie-Custom%20Identifier%20Findings_medium%20Risk.png)
 
+- Example of `Findings` of `High` Sensitive PII identified by Amazon Macie
+
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/11.%20Findings%20of%20Sentitive%20data.png)
+
 ## Task 7: Clean up
-- Delete the resources created in this demonstration (SNS topic, EventBridge rule, Macie job, S3 bucket).
+- Delete the resources created in this demonstration (
+- SNS topic,
+- EventBridge rule,
+- Macie job,
+- S3 bucket).
+
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/14.%20SNS%20topic%20deleted.png)
+
+## Conclusion
+Using Amazon Macie with EventBridge and SNS provides an automated way to monitor your S3 data for PII. The email alerts allow quick reaction to remediate any unintended sensitive data uploads.
