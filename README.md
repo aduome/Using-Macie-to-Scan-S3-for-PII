@@ -65,13 +65,14 @@ for x in $(ls -1 *.txt); do aws s3 cp ${x} s3://BUCKET_NAME/$RANDOM/$RANDOM/$RAN
 
 - Create an SNS topic named "Macie-Alerts".
 
-[-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/4.%20SNS%20topic%20created.png)
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/4.%20SNS%20topic%20created.png)
 
 - Subscribe your email to the topic for notifications.
 
-  
-  
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/5.%20SNS%20subscription.png)
+
 - Confirm your subscribed email.
+- You will receive a confirmation email shortly after, with a link you need to click on. Try to check your `SPAM` folder.
 
 - Create SNS Topic
 
@@ -80,12 +81,24 @@ for x in $(ls -1 *.txt); do aws s3 cp ${x} s3://BUCKET_NAME/$RANDOM/$RANDOM/$RAN
 
 - Create an EventBridge rule to trigger on Macie findings and send events to the SNS topic.
 
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/7.%20Eventbridge%20-%20Macie%20event%20rule1.png)
+
 ## Task 5: Adding a Custom Macie Data Identifier
 - Navigate to the [Macie console](https://us-east-1.console.aws.amazon.com/macie/home?region=us-east-1#home)
 - Create a custom data identifier for Australian license plates using the provided regular expression.
+- Use the below Regular Expressions for Australian Plates
+
+```
+([0-9][a-zA-Z][a-zA-Z]-?[0-9][a-zA-Z][a-zA-Z])|([a-zA-Z][a-zA-Z][a-zA-Z]-?[0-9][0-9][0-9])|([a-zA-Z][a-zA-Z]-?[0-9][0-9]-?[a-zA-Z][a-zA-Z])|([0-9][0-9][0-9]-?[a-zA-Z][a-zA-Z][a-zA-Z])|([0-9][0-9][0-9]-?[0-9][a-zA-Z][a-zA-Z])
+```
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/9.%20Create%20Macie%20Custom%20Data%20Identifier.png)
+
+This is a very basic regular expression that will pick up the license plate formats in the example file above.
 
 ## Task 6: Starting a New Job
 - Start a Macie job to scan the S3 bucket for PII using the custom data identifier.
+
+![-](https://github.com/aduome/Using-Macie-to-Scan-S3-for-PII/blob/main/Project%20Images/10.%20Macie-Custom%20Identifier%20Findings_medium%20Risk.png)
 
 ## Task 7: Clean up
 - Delete the resources created in this demonstration (SNS topic, EventBridge rule, Macie job, S3 bucket).
